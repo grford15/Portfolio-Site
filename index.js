@@ -23,11 +23,13 @@ app.post('/api/form', (req, res) => {
 
         let transporter = nodemailer.createTransport({
             service: 'gmail',
-            host: 'smtp.gmail.com',
+            port: 465,
+            secure: true,
             auth: {
-                    user: 'g.rutherford10@gmail.com',
-                    pass: 'Semperfi1312'
-                }
+                type: 'OAuth2',
+                user: 'user@example.com',
+                accessToken: 'ya29.Glv7BuAqia8aNP4sTWGg78ED5BDZtpBKEhBlD7HlQZcoGXKDLvh9OW9GQHReprEVLGBmH_0RYbYQ4yF2d0wvniYdvr5o4Qbq_DKnDZvsHFh9XVNpSkZxh-hwmMW-'
+            }
         })
 
         let mailOptions = {
